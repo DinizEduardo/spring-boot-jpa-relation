@@ -1,9 +1,6 @@
 package br.com.spring.jpa.empresas.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.With;
+import lombok.*;
 
 import java.util.UUID;
 
@@ -11,6 +8,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Getter
 @With
+@Builder
 public class Funcionario {
 
     private Long idSequencial;

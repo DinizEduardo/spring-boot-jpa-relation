@@ -23,8 +23,6 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
         body.put("timestamp", LocalDate.now());
         body.put("status", status.value());
 
-//        Map<Map<String, String>, Map<String, String>> errors = new HashMap<>();
-
         List<Map<String, String>> errors = new ArrayList<>();
 
         for (FieldError x : ex.getBindingResult()
