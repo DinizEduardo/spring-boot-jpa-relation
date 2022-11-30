@@ -35,7 +35,9 @@ public class FuncionarioController {
     public ResponseEntity<?> buscaFuncionarioPorId(@PathVariable String idFuncionario) {
         Funcionario funcionario = processor.buscaPorId(UUID.fromString(idFuncionario));
 
-        return ResponseEntity.ok(funcionario);
+        FuncionarioResponse funcionarioResponse = FuncionarioResponseMapper.INSTANCE.mapFrom(funcionario);
+
+        return ResponseEntity.ok(funcionarioResponse);
     }
 
 }

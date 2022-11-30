@@ -11,11 +11,11 @@ import java.util.UUID;
 @NoArgsConstructor
 @Getter
 @Builder
-public class FuncionarioResponse {
+public class EmpresaResponse {
 
     private UUID id;
     private String nome;
-    private String cpf;
-    private String email;
+    private String cnpj;
+    private FuncionarioResponse funcionario;
 
 }
