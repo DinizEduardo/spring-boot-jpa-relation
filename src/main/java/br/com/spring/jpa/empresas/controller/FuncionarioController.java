@@ -8,12 +8,10 @@ import br.com.spring.jpa.empresas.domain.Funcionario;
 import br.com.spring.jpa.empresas.service.FuncionarioProcessor;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/funcionarios")
@@ -31,6 +29,13 @@ public class FuncionarioController {
         );
 
         return ResponseEntity.ok(funcionarioResponse);
+    }
+
+    @GetMapping("/{idFuncionario}")
+    public ResponseEntity<?> buscaFuncionarioPorId(@PathVariable String idFuncionario) {
+        Funcionario funcionario = processor.buscaPorId(UUID.fromString(idFuncionario));
+
+        return ResponseEntity.ok(funcionario);
     }
 
 }

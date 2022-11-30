@@ -20,4 +20,8 @@ public class FuncionarioProcessor {
         );
     }
 
+    public Funcionario buscaPorId(UUID id) {
+        return persistence.buscaPorId(id);
+    }
+
 }
